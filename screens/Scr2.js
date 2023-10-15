@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, Text, View , TouchableOpacity, TextInput, Image,ScrollView, SafeAreaView } from "react-native";
-
+import Item from '../components/Item';
 
 export default function Scr2() {
     let imglogo = require('../assets/logo.jpg');
@@ -68,22 +68,8 @@ export default function Scr2() {
                 <Text style= {{fontSize:20,fontFamily:"arial", fontWeight:500,marginTop:8 }} >{txtTitle1}</Text>
             </View>
             <ScrollView style = {styles.bottom2}>
-                <View style ={styles.items}>
-                    <View >
-                        <Text style= {{fontSize:17,fontFamily:"arial", fontWeight:500,marginTop:8 }}>{txtItems}</Text>
-                        <Text style={{fontSize:15, fontFamily:"arial", fontWeight:500, color:"#B1B9B9",marginTop:8}}>Black coffee</Text>
-                        <Text style={{fontSize:15, fontFamily:"arial", fontWeight:400, marginTop:8}}s>28.000đ</Text>
-                    </View>
-                    <Image source={require('../assets/logo.jpg')} style={styles.imgItems}></Image>
-                </View>
-                <View style ={styles.items1}>
-                    <View >
-                        <Text style= {{fontSize:17,fontFamily:"arial", fontWeight:500,marginTop:8 }}>{txtItems}</Text>
-                        <Text style={{fontSize:15, fontFamily:"arial", fontWeight:500, color:"#B1B9B9",marginTop:8}}>Black coffee</Text>
-                        <Text style={{fontSize:15, fontFamily:"arial", fontWeight:400, marginTop:8}}s>28.000đ</Text>
-                    </View>
-                    <Image source={require('../assets/logo.jpg')} style={styles.imgItems}></Image>
-                </View>
+                <Item txtItems={txtItems}/>
+                <Item txtItems={txtItems}/>
             </ScrollView>
 
         </View>
