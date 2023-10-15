@@ -23,5 +23,14 @@ const box = (width, height, color, radius) => {
         borderRadius: radius || 0
     }
 }
+const absolute = (top, right, bottom, left) => {
+    return {
+        position: "absolute",
+        top: top || "auto",
+        right: right || "auto",
+        bottom: bottom || "auto",
+        left: left || "auto"
+    }
+}
 export  {text, box, border};
 
