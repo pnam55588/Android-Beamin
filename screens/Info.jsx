@@ -2,18 +2,9 @@ import React from "react";
 import { StyleSheet, View, Text, Image, TouchableOpacity, TextInput } from "react-native";
 import { text, box, border } from "../util/styles.jsx";
 
-export default function Info({ navigation }) {
+export default function Info({ navigation, route}) {
 
-    const user = {
-        name: "Nguyễn Văn A",
-        email: "pnam55588@gmail.com",
-        phone: "0987654321",
-        img: "https://thumbs.dreamstime.com/b/default-avatar-profile-image-vector-social-media-user-icon-potrait-182347582.jpg",
-        adds: [
-            "Số 1, đường 1, phường 1, quận 1, TP.HCM",
-            "Số 2, đường 2, phường 2, quận 2, TP.HCM",
-        ]
-    }
+    const {user} = route.params
 
     return (
         <View style={[styles.container]}>

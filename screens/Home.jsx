@@ -8,12 +8,13 @@ import BannerMember from "../components/BannerMember";
 
 
 
-export default function Home({ navigation }) {
+export default function Home({ navigation, route}) {
     const arr = [1, 2, 3, 4,]
+    const {user} = route.params
 
     return (
         <ScrollView>
-            <ArressBar />
+            <ArressBar navigation={navigation} user={user}/>
             <Slider />
             <SearchBar />
             <View style={[styles.shopping]}>
@@ -43,7 +44,7 @@ export default function Home({ navigation }) {
                             <Text style={[{ marginTop: 10 }]}>Đi chợ hộ, giao tận<br />nhà</Text>
                             <Image source={require("../assets/food/0002 (1).png")} style={[box(35, 35, null, 0), { position: "absolute", bottom: 10, right: 10 }]}></Image>
                         </TouchableOpacity>
-                        <TouchableOpacity style={[box(null, "48%", "white", 20), { padding: 15 }]}>
+                        <TouchableOpacity style={[box(null, "48%", "white", 20), { padding: 15 }]} onPress={()=>{navigation.navigate('Studio')}}>
                             <Text style={[text(null, 18, 700, null)]}>STUDIO</Text>
                             <Text style={[{ marginTop: 10 }]}>Vậ phẩm độc lạ,<br />xinh, xịn</Text>
                             <Image source={require("../assets/food/0002 (2).png")} style={[box(35, 35, null, 0), { position: "absolute", bottom: 10, right: 10 }]}></Image>

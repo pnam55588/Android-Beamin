@@ -3,10 +3,19 @@ import { StyleSheet, View, Text, Image, TouchableOpacity, TextInput } from "reac
 import { text, box, border } from "../util/styles.jsx";
 
 export default function InputPassword({route, navigation }) {
+    const user = [
+        {name: "Phạm Hà Nam", phone: "123456789", pass:123, add:"Số 1, đường 1, phường 1, quận 1, TP.HCM",img: "https://thumbs.dreamstime.com/b/default-avatar-profile-image-vector-social-media-user-icon-potrait-182347582.jpg"},
+        {name: "Trần công minh", phone: "111222333", pass:456,add:"Long Bình, Biên Hòa, Đồng Nai", img: "https://thumbs.dreamstime.com/b/default-avatar-profile-image-vector-social-media-user-icon-potrait-182347582.jpg"},
+    ]
+
+
     const [password, setPassword] = useState()
     const { sdt } = route.params;
     const onPress = () => {
-        navigation.navigate('info', { sdt: sdt })
+        const check =  user.find(item => item.phone === sdt && item.pass === Number(password))
+        if(check){
+            navigation.navigate('Home', {user: check})
+        }
     }
 
     return (
