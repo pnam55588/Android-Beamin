@@ -7,7 +7,7 @@ export default function Banner() {
     let title = "MUA 1TẶNG 1"
     let title1 = "Độc quyền mua một tặng một tại Beamin"
     let imglogo = require('../assets/logo.jpg');
-    let imgContent1 = require('../assets/logo.jpg');
+
   return (
     <View style ={styles.container}>
         <View style = {styles.top} >
@@ -108,3 +108,46 @@ const styles = StyleSheet.create({
         borderRadius:15
     }
   });
+
+// import React from "react";
+// import { StyleSheet, Text, View, ScrollView } from "react-native";
+// import Banner from './Banner';
+
+// export default function Slider({ navigation, txtItems }) {
+//     const banners = [
+//         {
+//             img: require('../assets/iconBeamin.jpg'),
+//             title: "MUA 1 TẶNG 1",
+//             description: "Độc quyền mua một tặng một tại Beamin",
+//         },
+//         {
+//             img: require('../assets/iconBeamin.jpg'),
+//             title: "MUA 1 TẶNG 1",
+//             description: "Độc quyền mua một tặng một tại Beamin",
+//         },
+//         {
+//             img: require('../assets/iconBeamin.jpg'),
+//             title: "MUA 1 TẶNG 1",
+//             description: "Độc quyền mua một tặng một tại Beamin",
+//         },
+//     ];
+
+//     return (
+//         <View style={styles.container}>
+//             <ScrollView horizontal style={styles.scrollView} scrollEventThrottle={16}>
+//                 {banners.map((banner, index) => (
+//                     <Banner key={index} img={banner.img} title={banner.title} description={banner.description} />
+//                 ))}
+//             </ScrollView>
+//         </View>
+//     );
+// }
+
+// const styles = StyleSheet.create({
+//     container: {
+//         display: "flex",
+//     },
+//     scrollView: {
+//         flexDirection: "row",
+//     },
+// });

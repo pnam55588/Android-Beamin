@@ -12,7 +12,8 @@ import Scr2 from "./screens/Scr2";
 import Product from "./screens/Product";
 import Payment from "./screens/Payment";
 import Studio from "./screens/Studio";
-
+import MART from "./screens/MART";
+import MamNon from "./screens/mamnon";
 
 const Stack = createNativeStackNavigator();
 export default function App() {
@@ -29,6 +30,8 @@ export default function App() {
         <Stack.Screen name="Product" component={Product} />
         <Stack.Screen name="Payment" component={Payment} />
         <Stack.Screen name="Studio" component={Studio} />
+        <Stack.Screen name="MART" component={MART} />
+        <Stack.Screen name="MamNon" component={MamNon} />
       </Stack.Navigator>
     </NavigationContainer>
   );
