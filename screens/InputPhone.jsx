@@ -7,7 +7,7 @@ export default function InputPhone({ route, navigation }) {
     const [sdt, setSdt] = useState('')
 
     const onPress = () => {
-        navigation.navigate('input_password', { sdt: sdt })
+        navigation.navigate('InputPassword', { sdt: sdt })
     }
 
     return (

@@ -4,11 +4,13 @@ import {text, box, border} from "../util/styles.jsx";
 
 export default function Login({navigation}) {
 
+    const USER_DEFAULT = {name: "Trần công minh", phone: "111222333", pass:456,add:"Long Bình, Biên Hòa, Đồng Nai", img: "https://thumbs.dreamstime.com/b/default-avatar-profile-image-vector-social-media-user-icon-potrait-182347582.jpg"}
+
     const handlePhoneInput = () => {
-        navigation.navigate('input_phone')
+        navigation.navigate('InputPhone')
     }
     const handleFacebookBtn = () => {
-        navigation.navigate('info')
+        navigation.navigate('Home', {user: USER_DEFAULT})
     }
 
     return (
