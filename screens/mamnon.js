@@ -20,14 +20,14 @@ export default function MamNon({ navigation }) {
 
     return (
         <View style={styles.container}>
-            <View style={styles.top}>
+            {/* <View style={styles.top}>
                 <AntDesign
                     name="arrowleft"
                     size={30}
                     onPress={() => navigation.goBack()}
                 ></AntDesign>
 
-            </View>
+            </View> */}
             <ScrollView>
                 <BannerMember></BannerMember>
                 <View>

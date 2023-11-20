@@ -3,17 +3,13 @@ import { StyleSheet, Text, View, TouchableOpacity, TextInput, Image, ScrollView,
 import Item from '../components/Item';
 import { FlatList } from 'react-native';
 
-export default function Scr2({ route }) {
+export default function Scr2({navigation, route }) {
 
-    const { shopName, shopName1, shopList } = route.params;
+    const { shopName, shopName1, shopList, user} = route.params;
     console.log(shopList)
 
     let imglogo = require('../assets/logo.jpg');
-    let txtTitle = "Nghiện - Trà Sữa Ăn Vặt";
-    let txtTitle1 = "Cà phê - Nghiện tỉnh táo"
-    let txtItems = "Cà phê đen đá"
-    let txtItems1 = "Cà phê đen đá"
-    let txtItems2 = "Cà phê đen đá"
+
 
     return (
         <View style={styles.container}>
@@ -76,18 +72,20 @@ export default function Scr2({ route }) {
                     {/* <Item txtItems={txtItems}/>
                 <Item txtItems={txtItems}/> */}
                     <View style={styles.bottom2} >
-                       <View style={{width:"90%",borderBottomWidth:1, borderColor:"#D9D9D9D9"}}>
-                       <FlatList
-                            key='#'
-                            data={shopList}
-                            renderItem={({ item }) => {
-                                return (
-                                    <Item img={item.img} txtItems1={item.name1} gia={item.gia} txtItems={item.name} />
-                                );
-                            }}
-                            keyExtractor={(item) => item.key}
-                        ></FlatList>
-                       </View>
+                        <View style={{ width: "90%", borderBottomWidth: 1, borderColor: "#D9D9D9D9" }}>
+                            <FlatList
+                                key='#'
+                                data={shopList}
+                                renderItem={({ item }) => {
+                                    return (
+                                        <TouchableOpacity onPress={()=>{navigation.navigate('Product', {item, user})}}>
+                                            <Item img={item.img} txtItems1={item.name1} gia={item.gia} txtItems={item.name} />
+                                        </TouchableOpacity>
+                                    );
+                                }}
+                                keyExtractor={(item) => item.key}
+                            ></FlatList>
+                        </View>
                     </View>
                 </ScrollView>
 
@@ -162,12 +160,12 @@ const styles = StyleSheet.create({
         height: "auto"
     },
     bottom2: {
-        borderWidth:1,
+        borderWidth: 1,
 
         width: 390,
         marginTop: 15,
-        borderWidth:1, borderColor:"#D9D9D9D9",
-        alignItems:'center',
+        borderWidth: 1, borderColor: "#D9D9D9D9",
+        alignItems: 'center',
 
     },
     items: {

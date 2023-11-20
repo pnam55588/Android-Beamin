@@ -8,18 +8,18 @@ import BannerMember from "../components/BannerMember";
 
 
 
-export default function Home({ navigation, route}) {
+export default function Home({ navigation, route }) {
     const arr = [1, 2, 3, 4,]
-    const {user} = route.params
+    const { user } = route.params
 
     return (
         <ScrollView>
-            <ArressBar navigation={navigation} user={user}/>
+            <ArressBar navigation={navigation} user={user} />
             <Slider />
             <SearchBar />
             <View style={[styles.shopping]}>
                 <View style={[styles.top]}>
-                    <TouchableOpacity style={[styles.left, box("45%", null, "white", 20)]}>
+                    <TouchableOpacity style={[styles.left, box("45%", null, "white", 20)]} onPress={()=>{navigation.navigate('MART', {user})}}>
                         <Text style={[text(null, 18, 700, null)]}>FOOD</Text>
                         <Text style={[{ marginTop: 10 }]}>Giao đồ ăn tận nơi, order<br />ngay cho nóng</Text>
                         <SafeAreaView style={[{ marginTop: 20 }]}>
@@ -39,14 +39,14 @@ export default function Home({ navigation, route}) {
                         </SafeAreaView>
                     </TouchableOpacity>
                     <View style={[styles.right, box("45%", 250, null, 20)]}>
-                        <TouchableOpacity style={[box(null, "48%", "white", 20), { padding: 15, position: "relative" }]}>
+                        <TouchableOpacity style={[box(null, "48%", "white", 20), { padding: 15, position: "relative" }]} onPress={() => { navigation.navigate('MART', {user}) }}>
                             <Text style={[text(null, 18, 700, null)]}>MART</Text>
                             <Text style={[{ marginTop: 10 }]}>Đi chợ hộ, giao tận<br />nhà</Text>
                             <Image source={require("../assets/food/0002 (1).png")} style={[box(35, 35, null, 0), { position: "absolute", bottom: 10, right: 10 }]}></Image>
                         </TouchableOpacity>
-                        <TouchableOpacity style={[box(null, "48%", "white", 20), { padding: 15 }]} onPress={()=>{navigation.navigate('Studio')}}>
+                        <TouchableOpacity style={[box(null, "48%", "white", 20), { padding: 15 }]} onPress={() => { navigation.navigate('Studio') }}>
                             <Text style={[text(null, 18, 700, null)]}>STUDIO</Text>
-                            <Text style={[{ marginTop: 10 }]}>Vậ phẩm độc lạ,<br />xinh, xịn</Text>
+                            <Text style={[{ marginTop: 10 }]}>Vật phẩm độc lạ,<br />xinh, xịn</Text>
                             <Image source={require("../assets/food/0002 (2).png")} style={[box(35, 35, null, 0), { position: "absolute", bottom: 10, right: 10 }]}></Image>
                         </TouchableOpacity>
                     </View>
@@ -59,12 +59,14 @@ export default function Home({ navigation, route}) {
                     </TouchableOpacity>
                 </View>
             </View>
-            <BannerMember />
-            <TouchableOpacity style={[styles.discount, box(null,50,"white",0)]}>
-                <Image source={require('../assets/coupon icon.png')} style={[box(30,30,null,0),{marginRight:10}]}/>
+            <TouchableOpacity onPress={()=>{navigation.navigate('MamNon')}}>
+                <BannerMember />
+            </TouchableOpacity>
+            <TouchableOpacity style={[styles.discount, box(null, 50, "white", 0)]}>
+                <Image source={require('../assets/coupon icon.png')} style={[box(30, 30, null, 0), { marginRight: 10 }]} />
                 <Text style={[text("#3ac5c9", 15, 400, null)]}>Bạn ơi, 72 mã giảm giá vẫy gọi nè</Text>
             </TouchableOpacity>
-            <Text style={[text("gray",15,400,"center"), {marginTop:50,marginBottom:80}]}>Dưới này không có gì ăn được</Text>
+            <Text style={[text("gray", 15, 400, "center"), { marginTop: 50, marginBottom: 80 }]}>Dưới này không có gì ăn được</Text>
         </ScrollView>
     )
 }
@@ -87,9 +89,9 @@ const styles = StyleSheet.create({
     bottom: {
         margin: 15,
     },
-    discount:{
-        flexDirection:"row",
-        padding:15,
-        alignItems:"center",
+    discount: {
+        flexDirection: "row",
+        padding: 15,
+        alignItems: "center",
     }
 })
